@@ -1,6 +1,6 @@
 # Prometheus Notes
 
-The following is a collection of notes plus links to external resources I have collected while working with Prometheus.
+The following is a summary of the notes and the links to external resources I have collected while working with Prometheus.
 
 ## Overview
 
@@ -95,6 +95,9 @@ rate(prometheus_local_storage_chunk_ops_total[1m])
 ~~~
 
 Ref: https://prometheus.io/docs/introduction/getting_started/
+
+Additional query examples in combination with Prometheus functions can be found here:
+- https://prometheus.io/docs/querying/examples/
 
 ### Export additional host metrics through node_exporter
 

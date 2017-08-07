@@ -271,6 +271,14 @@ Export Prometheus metrics from arbitrary unstructured log data: the goal is to u
 - Tips to develop your own exporter (Brian Brazil): https://www.slideshare.net/brianbrazil/so-you-want-to-write-an-exporter
 - Write a Jenkins exporter in Python: https://www.robustperception.io/writing-a-jenkins-exporter-in-python/
 
+## Data visualization
+
+One of the best ways to visualize data saved in Prometheus is to use a dynamic dashboard like *Grafana*.
+
+- Grafana support for Prometheus (https://prometheus.io/docs/visualization/grafana/)
+- Using Prometheus with Grafana (http://docs.grafana.org/features/datasources/prometheus/)
+- Grafana main web site (https://grafana.com)
+
 ## Useful Resources
 
 - A curated list of Prometheus resources (articles/videos/etc.): https://github.com/roaldnefs/awesome-prometheus

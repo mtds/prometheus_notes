@@ -101,8 +101,7 @@ Additional query examples in combination with Prometheus functions can be found 
 
 ### Export additional host metrics through node_exporter
 
-Monitoring only Prometheus itself is not very useful. The main monitoring agent utilized by Prometheus is called *node_exporter*: it exports hardware and OS metrics exposed by *NIX kernels, 
-written in Go with pluggable metric collectors.
+Monitoring only Prometheus itself is not very useful. The main monitoring agent utilized by Prometheus is called *node_exporter*: it exports hardware and OS metrics exposed by *NIX kernels, written in Go with pluggable metric collectors.
 
 Ref: https://github.com/prometheus/node_exporter
 
@@ -146,7 +145,7 @@ metric_name, key/values,(...), samples
 
 **NOTES**
 - Labels can have any UTF8 value
-- __is reserved keyword
+- ``__is`` reserved keyword
 
 ### Gauges
 - Snapshot of state
@@ -249,20 +248,14 @@ results in one or more vector elements at a given point in time, the alert count
 - https://www.robustperception.io/high-availability-prometheus-alerting-and-notification/
 - https://fosdem.org/2017/schedule/event/deploying_prometheus_at_wikimedia_foundation/
 
-## A list of additional Prometheus Exporters
+## Prometheus Exporters
+
+Exporters are independent programs, which can extract metrics from the monitored systems and convert them to a Prometheus-readable format.
+The most famous of these is ``node_exporter``, which reads and provides operating system metrics such as memory usage and network load.
+But there are other exporters for a wide range of protocols and services, such as Apache, MySQL, Postgresql, SNMP, etc.
 
 - Officially supported exporters: https://prometheus.io/download/
-
-- Apache exporter (exports apache mod_status statistics via HTTP): https://github.com/neezgee/apache_exporter
-- Collectd exporter: https://github.com/prometheus/collectd_exporter
-- IPMI exporter written in Go: https://github.com/lovoo/ipmi_exporter
-- Lustre FS exporter: https://github.com/HewlettPackard/lustre_exporter
-- PostgreSQL exporter: https://github.com/wrouesnel/postgres_exporter
-- RabbitMQ exporter based on its own HTTP API: https://github.com/kbudde/rabbitmq_exporter
-- Redis exporter (supports version 2.x and 3.x): https://github.com/oliver006/redis_exporter
-
-Export Prometheus metrics from arbitrary unstructured log data: the goal is to use __Grok patterns__ for extracting Prometheus metrics from arbitrary log files.
-- https://github.com/fstab/grok_exporter
+- Third party exporters: https://prometheus.io/docs/instrumenting/exporters/
 
 ### Writing an exporter by yourself
 

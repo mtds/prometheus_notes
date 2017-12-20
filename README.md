@@ -77,6 +77,16 @@ http_requests_total{code="503",handler="query_range",method="get"} 131
 [...]
 ~~~
 
+### Debian Packages
+
+The Prometheus server is available also as Debian package provided directly by RobustPerception with their own [APT repository](http://deb.robustperception.io/).
+
+The following components are also available as packages:
+
+* Node Exporter 
+* Pushgateway 
+* Alertmanager
+
 ### Using the expression browser
 
 Let us try looking at some data that Prometheus has collected about itself. To use Prometheus's built-in expression browser, navigate to http://localhost:9090/graph and choose the "Console" view within the "Graph" tab.

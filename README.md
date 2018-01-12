@@ -133,7 +133,7 @@ Reload the configuration:
 curl -X POST http://localhost:9090/-/reload
 ~~~
 
-Note that as of Prometheus 2.0, the //--web.enable-lifecycle// command line flag must be passed for HTTP reloading to work.
+Note that as of Prometheus 2.0, the ``--web.enable-lifecycle`` command line flag must be passed for HTTP reloading to work.
 
 Node Exporter:
 

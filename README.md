@@ -111,13 +111,13 @@ Additional query examples in combination with Prometheus functions can be found 
 
 ### Export additional host metrics through node_exporter
 
-Monitoring only Prometheus itself is not very useful. The main monitoring agent utilized by Prometheus is called *node_exporter*: it exports hardware and OS metrics exposed by *NIX kernels, written in Go with pluggable metric collectors.
+Monitoring only Prometheus itself is not very useful. The main monitoring agent utilized by Prometheus is called *node_exporter*: it exports hardware and OS metrics exposed by *NIX kernels, it's written in Go with pluggable metric collectors.
 
 Ref: https://github.com/prometheus/node_exporter
 
-### Enable node_exporter
+### Install and Enable the node_exporter
 
-Add the following lines at the end of your *prometheus.yml* and reload the Prometheus daemon.
+Add the following lines at the end of your *prometheus.yml* and reload the Prometheus configuration.
 
 ~~~
   - job_name: node
@@ -126,11 +126,20 @@ Add the following lines at the end of your *prometheus.yml* and reload the Prome
       - targets: ['localhost:9100']
 ~~~
 
-**NOTE** keep the indentation.
+**NOTE**: keep the indentation, since the format is in **YAML**.
+
+Reload the configuration:
+~~~
+curl -X POST http://localhost:9090/-/reload
+~~~
+
+Note that as of Prometheus 2.0, the //--web.enable-lifecycle// command line flag must be passed for HTTP reloading to work.
+
+Node Exporter:
 
 - Go to https://prometheus.io/download/ and download the latest stable release of *node_exporter* for your architecture
 - Untar the tarball
-- Cd into the directory
+- cd into the directory
 
 Run it: 
 ~~~

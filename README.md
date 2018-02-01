@@ -278,29 +278,29 @@ But there are other exporters for a wide range of protocols and services, such a
 
 ### Writing an exporter by yourself
 
-- Things to consider when writing an exporter or custom collector:  https://prometheus.io/docs/instrumenting/writing_exporters/
-- PromCom 2016: "So you want to write an exporter" https://www.youtube.com/watch?v=KXq5ibSj2qA
-- Tips to develop your own exporter (Brian Brazil): https://www.slideshare.net/brianbrazil/so-you-want-to-write-an-exporter
-- Write a Jenkins exporter in Python: https://www.robustperception.io/writing-a-jenkins-exporter-in-python/
+- [Things to consider when writing an exporter or custom collector](https://prometheus.io/docs/instrumenting/writing_exporters/)
+- [PromCom 2016: "So you want to write an exporter"](https://www.youtube.com/watch?v=KXq5ibSj2qA)
+- [Tips to develop your own exporter (Brian Brazil)](https://www.slideshare.net/brianbrazil/so-you-want-to-write-an-exporter)
+- [Write a Jenkins exporter in Python](https://www.robustperception.io/writing-a-jenkins-exporter-in-python/)
 
 ## Data visualization
 
 One of the best ways to visualize data saved in Prometheus is to use a dynamic dashboard like *Grafana*.
 
-- Grafana support for Prometheus (https://prometheus.io/docs/visualization/grafana/)
-- Using Prometheus with Grafana (http://docs.grafana.org/features/datasources/prometheus/)
-- Grafana main web site (https://grafana.com)
+- [Grafana support for Prometheus](https://prometheus.io/docs/visualization/grafana/)
+- [Using Prometheus with Grafana](http://docs.grafana.org/features/datasources/prometheus/)
+- [Grafana main web site](https://grafana.com)
 
 ## Useful Resources
 
-- A curated list of Prometheus resources (articles/videos/etc.): https://github.com/roaldnefs/awesome-prometheus
-- Prometheus Presentation at CERN (Fabian Reinartz/CoreOS): https://cds.cern.ch/record/2253468?ln=en
+- [A curated list of Prometheus resources (articles/videos/etc.)](https://github.com/roaldnefs/awesome-prometheus)
+- [Prometheus Presentation at CERN (Fabian Reinartz/CoreOS)](https://cds.cern.ch/record/2253468?ln=en)
 
 ### Tutorials
 
-- Robust Perception (Prometheus company) YouTube channel: https://www.youtube.com/channel/UCtiFWOeRSTP3M6QUnTEKwpw
-- Monitoring a Machine with Prometheus: A Brief Introduction (Brian Brazil) (https://www.youtube.com/watch?v=WUkNnY65htQ)
-- PromCom (Prometheus Monitoring Conference): https://www.youtube.com/channel/UC4pLFely0-Odea4B2NL1nWA
+- [Robust Perception (Prometheus company) YouTube channel](https://www.youtube.com/channel/UCtiFWOeRSTP3M6QUnTEKwpw)
+- [Monitoring a Machine with Prometheus: A Brief Introduction (Brian Brazil)](https://www.youtube.com/watch?v=WUkNnY65htQ)
+- [PromCom (Prometheus Monitoring Conference)](https://www.youtube.com/channel/UC4pLFely0-Odea4B2NL1nWA)
 
 ### PromQL
 
@@ -315,6 +315,12 @@ Which targets have the most samples? (Brian Brazil)
 
 Let's look at the Graphite, InfluxDB and Prometheus query languages and see how the same ideas are represented in each (Brian Brazil):
 - https://www.robustperception.io/translating-between-monitoring-languages/
+
+A short collection of PromQL queries and alert rules for different use cases:
+- https://github.com/infinityworks/prometheus-example-queries
+
+Walkthrough on how to build a query and narrows it down to aggregate the values of multiple time series:
+- https://www.weave.works/blog/promql-queries-for-the-rest-of-us/
 
 ### How to query Prometheus
 

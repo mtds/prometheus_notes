@@ -4,8 +4,7 @@ The following is a summary of the notes and the links to external resources I ha
 
 ## Overview
 
-Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud. 
-[...] It is now a standalone open source project and maintained independently of any company.
+Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud. [...] It is now a standalone open source project and maintained independently of any company.
 
 ### Features
 
@@ -21,13 +20,13 @@ Prometheus's main features are:
 
 Most Prometheus components are written in Go, making them easy to build and deploy as static binaries.
 
-Ref: https://prometheus.io/docs/introduction/overview/
+Ref: [Prometheus Overview](https://prometheus.io/docs/introduction/overview/)
 
 ## Installation
 
 ### Install Prometheus and enable self-monitoring
 
-- Go to https://prometheus.io/download/ and download the latest stable release of Prometheus for your architecture
+- Go to the [download page](https://prometheus.io/download/) and get the latest stable release of Prometheus for your architecture
 - Untar the tarball
 - cd into the directory
 
@@ -104,16 +103,15 @@ Another example based on Prometheus functions: enter the following expression to
 rate(prometheus_local_storage_chunk_ops_total[1m])
 ~~~
 
-Ref: https://prometheus.io/docs/introduction/getting_started/
+Ref: [Getting started with Prometheus](https://prometheus.io/docs/introduction/getting_started/)
 
-Additional query examples in combination with Prometheus functions can be found here:
-- https://prometheus.io/docs/querying/examples/
+Additional query examples in combination with Prometheus functions can be found [here](https://prometheus.io/docs/querying/examples/).
 
 ### Export additional host metrics through node_exporter
 
 Monitoring only Prometheus itself is not very useful. The main monitoring agent utilized by Prometheus is called *node_exporter*: it exports hardware and OS metrics exposed by *NIX kernels, it's written in Go with pluggable metric collectors.
 
-Ref: https://github.com/prometheus/node_exporter
+Ref: [Node Exporter (Github repo)](https://github.com/prometheus/node_exporter)
 
 ### Install and Enable the node_exporter
 
@@ -137,7 +135,7 @@ Note that as of Prometheus 2.0, the ``--web.enable-lifecycle`` command line flag
 
 Node Exporter:
 
-- Go to https://prometheus.io/download/ and download the latest stable release of *node_exporter* for your architecture
+- Go to the [download page](https://prometheus.io/download/) and get the latest stable release of *node_exporter* for your architecture
 - Untar the tarball
 - cd into the directory
 
@@ -183,7 +181,7 @@ metric_name, key/values,(...), samples
 - Can be used to track distributions
 - Summary without quantiles is cheap, use it freely
 
-Ref: https://prometheus.io/docs/concepts/metric_types/
+Ref: [Prometheus Metric Types](https://prometheus.io/docs/concepts/metric_types/)
 
 ## Querying Prometheus
 
@@ -224,8 +222,7 @@ PromQL is __strongly typed__:
 - Query range, each step is independently calculated
 
 ### Recording Rules
-Recording rules allow you to precompute frequently needed or computationally expensive expressions and save their result as a new set of time series. Querying the precomputed result will then often 
-be much faster than executing the original expression every time it is needed. This is especially useful for __dashboards__, which need to query the same expression repeatedly every time they refresh.
+Recording rules allow you to precompute frequently needed or computationally expensive expressions and save their result as a new set of time series. Querying the precomputed result will then often be much faster than executing the original expression every time it is needed. This is especially useful for __dashboards__, which need to query the same expression repeatedly every time they refresh.
 
 - Run regularly by Prometheus
 - For precomputation, when you need a range vector, and for aggregates for federation
@@ -233,15 +230,15 @@ be much faster than executing the original expression every time it is needed. T
 
 ### Alerting Rules
 
-Alerting rules allow you to define alert conditions based on Prometheus expression language expressions and to send notifications about firing alerts to an external service. Whenever the alert expression 
+[Alerting rules](https://prometheus.io/docs/alerting/rules/) allow you to define alert conditions based on Prometheus expression language expressions and to send notifications about firing alerts to an external service. Whenever the alert expression 
 results in one or more vector elements at a given point in time, the alert counts as active for these elements' label sets.
 
-### References
-- https://prometheus.io/docs/querying/basics/
-- https://prometheus.io/docs/querying/examples/
-- https://prometheus.io/docs/querying/functions/
-- https://prometheus.io/docs/querying/operators/
-- https://prometheus.io/docs/alerting/rules/
+### Query References
+
+- [Query Basics](https://prometheus.io/docs/querying/basics/)
+- [Querying Examples](https://prometheus.io/docs/querying/examples/)
+- [Functions](https://prometheus.io/docs/querying/functions/)
+- [Operators](https://prometheus.io/docs/querying/operators/)
 
 ## Practical Deployment
 
@@ -262,10 +259,6 @@ results in one or more vector elements at a given point in time, the alert count
 - Use reverse proxy like nginx for auth. 
 - Prometheus supports credentials when scraping.
 
-### References
-- https://www.robustperception.io/scaling-and-federating-prometheus/
-- https://www.robustperception.io/high-availability-prometheus-alerting-and-notification/
-- https://fosdem.org/2017/schedule/event/deploying_prometheus_at_wikimedia_foundation/
 
 ## Prometheus Exporters
 
@@ -273,8 +266,8 @@ Exporters are independent programs, which can extract metrics from the monitored
 The most famous of these is ``node_exporter``, which reads and provides operating system metrics such as memory usage and network load.
 But there are other exporters for a wide range of protocols and services, such as Apache, MySQL, Postgresql, SNMP, etc.
 
-- Officially supported exporters: https://prometheus.io/download/
-- Third party exporters: https://prometheus.io/docs/instrumenting/exporters/
+- [Officially supported exporters](https://prometheus.io/download/)
+- [Third party exporters](https://prometheus.io/docs/instrumenting/exporters/)
 
 ### Writing an exporter by yourself
 
@@ -331,9 +324,9 @@ An introduction from scratch on how to build PromQL queries on an Ubuntu test in
 ### Prometheus instrumentation details
 
 Blog posts from Brian Brazil (main developer of Prometheus):
-- "How does a counter work?" https://www.robustperception.io/how-does-a-prometheus-counter-work/
-- "How does a gauge work?" https://www.robustperception.io/how-does-a-prometheus-gauge-work/
-- Counting with Prometheus (Brian Brazil): https://www.youtube.com/watch?v=67Ulrq6DxwA
+- [How does a counter work?](https://www.robustperception.io/how-does-a-prometheus-counter-work/)
+- [How does a gauge work?](https://www.robustperception.io/how-does-a-prometheus-gauge-work/)
+- [Counting with Prometheus (YouTube)](https://www.youtube.com/watch?v=67Ulrq6DxwA)
 
 ### Operations
 
@@ -342,3 +335,8 @@ Blog posts from Brian Brazil (main developer of Prometheus):
 - https://prometheus.io/docs/operating/security/
 - https://www.robustperception.io/reloading-prometheus-configuration/
 
+### Deploying and HA
+
+- [Scaling and federating Prometheus](https://www.robustperception.io/scaling-and-federating-prometheus/)
+- [HA Prometheus for alerting and notifications](https://www.robustperception.io/high-availability-prometheus-alerting-and-notification/)
+- [Deploying Prometheus at the Wikimedia Foundation (FOSDEM 2017)](https://fosdem.org/2017/schedule/event/deploying_prometheus_at_wikimedia_foundation/)

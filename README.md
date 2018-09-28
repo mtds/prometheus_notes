@@ -330,10 +330,16 @@ Blog posts from Brian Brazil (main developer of Prometheus):
 
 ### Operations
 
-- https://prometheus.io/docs/operating/configuration/
-- https://prometheus.io/docs/operating/storage/
-- https://prometheus.io/docs/operating/security/
-- https://www.robustperception.io/reloading-prometheus-configuration/
+- [Prometheus Configuration](https://prometheus.io/docs/operating/configuration/)
+- [Prometheus Storage (on disk)](https://prometheus.io/docs/operating/storage/)
+- [Prometheus external storage integration](https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage)
+- [Prometheus Security Model](https://prometheus.io/docs/operating/security/)
+
+Blog posts from Brian Brazil:
+- [Reload Prometheus configuration](https://www.robustperception.io/reloading-prometheus-configuration/)
+- [Dealing with "too many open files" errors](https://www.robustperception.io/dealing-with-too-many-open-files)
+- [Alerting on approaching open file limits](https://www.robustperception.io/alerting-on-approaching-open-file-limits)
+- [Using the textfile collector from a shell script](https://www.robustperception.io/using-the-textfile-collector-from-a-shell-script)
 
 ### Deploying and HA
 

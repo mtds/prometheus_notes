@@ -88,7 +88,7 @@ The following components are also available as packages:
 
 ### Using the expression browser
 
-Let us try looking at some data that Prometheus has collected about itself. To use Prometheus's built-in expression browser, navigate to http://localhost:9090/graph and choose the "Console" view within the "Graph" tab.
+Let us try looking at some data that Prometheus has collected about itself. To use Prometheus's built-in expression browser, navigate to ``http://localhost:9090/graph`` and choose the "Console" view within the "Graph" tab.
 
 Just check one of the metric exporter by Prometheus itself:
 ~~~
@@ -144,7 +144,7 @@ Run it:
 ./node_exporter
 ~~~
 
-The node exporter should now be accessible on http://localhost:9100/
+The node exporter should now be listening on port **9100** and the metrics can be obtained from the command line with: ``curl http://localhost:9100/metrics``.
 
 ## Data Model
 
@@ -259,6 +259,12 @@ results in one or more vector elements at a given point in time, the alert count
 - Use reverse proxy like nginx for auth. 
 - Prometheus supports credentials when scraping.
 
+## Pushgateway
+
+The Pushgateway is an intermediary service which allows you to push metrics from jobs which cannot be scraped:
+- [When to use the Pushgateway](https://prometheus.io/docs/practices/pushing/)
+- [Pushing Metrics](https://prometheus.io/docs/instrumenting/pushing/)
+- [Prometheus and anti-pattern pushgateway timeouts (Craftware)](https://www.craftware.info/2017/01/26/prometheus-and-anti-pattern-pushgateway-timeouts/)
 
 ## Prometheus Exporters
 
@@ -274,7 +280,8 @@ But there are other exporters for a wide range of protocols and services, such a
 - [Things to consider when writing an exporter or custom collector](https://prometheus.io/docs/instrumenting/writing_exporters/)
 - [PromCom 2016: "So you want to write an exporter"](https://www.youtube.com/watch?v=KXq5ibSj2qA)
 - [Tips to develop your own exporter (Brian Brazil)](https://www.slideshare.net/brianbrazil/so-you-want-to-write-an-exporter)
-- [Write a Jenkins exporter in Python](https://www.robustperception.io/writing-a-jenkins-exporter-in-python/)
+- [Write a Jenkins exporter in Python (Brian Brazil)](https://www.robustperception.io/writing-a-jenkins-exporter-in-python/)
+- [A Noob's guide to custom Prometheus exporters ](https://rsmitty.github.io/Prometheus-Exporters-Revamp/)
 
 ## Data visualization
 
@@ -288,6 +295,9 @@ One of the best ways to visualize data saved in Prometheus is to use a dynamic d
 
 - [A curated list of Prometheus resources (articles/videos/etc.)](https://github.com/roaldnefs/awesome-prometheus)
 - [Prometheus Presentation at CERN (Fabian Reinartz/CoreOS)](https://cds.cern.ch/record/2253468?ln=en)
+- [Five things you should be monitoring: Latency, Errors, Throughput, Utilization, Blackbox monitoring (B.Brazil)](https://www.oreilly.com/ideas/5-things-you-should-be-monitoring)
+- [Prometheus channel on Reddit](https://www.reddit.com/r/PrometheusMonitoring/)
+- [Questions tagged 'promql' on StackOverflow]((https://stackoverflow.com/questions/tagged/promql)
 
 ### Tutorials
 
@@ -295,7 +305,7 @@ One of the best ways to visualize data saved in Prometheus is to use a dynamic d
 - [Monitoring a Machine with Prometheus: A Brief Introduction (Brian Brazil)](https://www.youtube.com/watch?v=WUkNnY65htQ)
 - [PromCom (Prometheus Monitoring Conference)](https://www.youtube.com/channel/UC4pLFely0-Odea4B2NL1nWA)
 
-### PromQL
+## PromQL
 
 For day to day use, there's only a handful of PromQL patterns you need to know. Let's look at them (Brian Brazil):
 - https://www.robustperception.io/common-query-patterns-in-promql/
@@ -309,11 +319,20 @@ Which targets have the most samples? (Brian Brazil)
 Let's look at the Graphite, InfluxDB and Prometheus query languages and see how the same ideas are represented in each (Brian Brazil):
 - https://www.robustperception.io/translating-between-monitoring-languages/
 
+Composing range vector functions in PromQL:
+- https://www.robustperception.io/composing-range-vector-functions-in-promql
+
+Aggregating across batch job runs with ``push_time_seconds`` (Pushgateway):
+- https://www.robustperception.io/aggregating-across-batch-job-runs-with-push_time_seconds
+
 A short collection of PromQL queries and alert rules for different use cases:
 - https://github.com/infinityworks/prometheus-example-queries
 
 Walkthrough on how to build a query and narrows it down to aggregate the values of multiple time series:
 - https://www.weave.works/blog/promql-queries-for-the-rest-of-us/
+
+PromQL deep dive (WeaveWorks):
+- https://www.slideshare.net/weaveworks/promql-deep-dive-the-prometheus-query-language
 
 ### How to query Prometheus
 
@@ -328,7 +347,7 @@ Blog posts from Brian Brazil (main developer of Prometheus):
 - [How does a gauge work?](https://www.robustperception.io/how-does-a-prometheus-gauge-work/)
 - [Counting with Prometheus (YouTube)](https://www.youtube.com/watch?v=67Ulrq6DxwA)
 
-### Operations
+## Operations
 
 - [Prometheus Configuration](https://prometheus.io/docs/operating/configuration/)
 - [Prometheus Storage (on disk)](https://prometheus.io/docs/operating/storage/)
@@ -339,7 +358,8 @@ Blog posts from Brian Brazil:
 - [Reload Prometheus configuration](https://www.robustperception.io/reloading-prometheus-configuration/)
 - [Dealing with "too many open files" errors](https://www.robustperception.io/dealing-with-too-many-open-files)
 - [Alerting on approaching open file limits](https://www.robustperception.io/alerting-on-approaching-open-file-limits)
-- [Using the textfile collector from a shell script](https://www.robustperception.io/using-the-textfile-collector-from-a-shell-script)
+- [Using the Textfile collector from a shell script](https://www.robustperception.io/using-the-textfile-collector-from-a-shell-script)
+- [Quick sensor metrics with the Textfile collector](https://www.robustperception.io/quick-sensor-metrics-with-the-textfile-collector)
 
 ### Deploying and HA
 

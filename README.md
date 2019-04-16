@@ -325,6 +325,11 @@ Composing range vector functions in PromQL:
 Aggregating across batch job runs with ``push_time_seconds`` (Pushgateway):
 - https://www.robustperception.io/aggregating-across-batch-job-runs-with-push_time_seconds
 
+### Queries Examples
+
+PromQL cheat sheet - Usage and examples of basics, aggregations and functions:
+- https://github.com/jitendra-1217/promql.cheat.sheet
+
 A short collection of PromQL queries and alert rules for different use cases:
 - https://github.com/infinityworks/prometheus-example-queries
 

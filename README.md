@@ -193,6 +193,13 @@ PromQL is __strongly typed__:
 - Scalar: a simple numeric floating point value
 - String: a simple string value
 
+There are four parts to every metric:
+
+1. Metric_name (e.g. ``varnish_main_client_req``).
+2. One or more labels, which are simply key-value pairs that distinguish each metric with the same name (e.g. namespace="section-b4a199920b24b"). Each metric will have at least a job label, which corresponds to the scrape ``config`` in the Prometheus config.
+3. The value, which is a float64. When querying in the Prometheus console, the value shown is the value for the most recent timestamp collected.
+4. The timestamp, which has millisecond precision. The timestamp doesn't appear in the query console, but if you switch to the Graph tab within Prometheus, you can see the values for each timestamp in the chart.
+
 ### Matchers
 - =, !=, =~, !~
 - Can mix and match
@@ -296,6 +303,10 @@ One of the best ways to visualize data saved in Prometheus is to use a dynamic d
 - [A curated list of Prometheus resources (articles/videos/etc.)](https://github.com/roaldnefs/awesome-prometheus)
 - [Prometheus Presentation at CERN (Fabian Reinartz/CoreOS)](https://cds.cern.ch/record/2253468?ln=en)
 - [Five things you should be monitoring: Latency, Errors, Throughput, Utilization, Blackbox monitoring (B.Brazil)](https://www.oreilly.com/ideas/5-things-you-should-be-monitoring)
+- [Sysadmin Chris Siebenmann on Prometheus at University of Toronto](https://utcc.utoronto.ca/~cks/space/blog/__TopicPrometheus)
+
+### Forums
+
 - [Prometheus channel on Reddit](https://www.reddit.com/r/PrometheusMonitoring/)
 - [Questions tagged 'promql' on StackOverflow]((https://stackoverflow.com/questions/tagged/promql)
 
@@ -359,7 +370,8 @@ Blog posts from Brian Brazil (main developer of Prometheus):
 - [Prometheus external storage integration](https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage)
 - [Prometheus Security Model](https://prometheus.io/docs/operating/security/)
 
-Blog posts from Brian Brazil:
+### Blog posts from Brian Brazil
+
 - [Reload Prometheus configuration](https://www.robustperception.io/reloading-prometheus-configuration/)
 - [Dealing with "too many open files" errors](https://www.robustperception.io/dealing-with-too-many-open-files)
 - [Alerting on approaching open file limits](https://www.robustperception.io/alerting-on-approaching-open-file-limits)

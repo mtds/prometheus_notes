@@ -308,7 +308,7 @@ One of the best ways to visualize data saved in Prometheus is to use a dynamic d
 ### Forums
 
 - [Prometheus channel on Reddit](https://www.reddit.com/r/PrometheusMonitoring/)
-- [Questions tagged 'promql' on StackOverflow]((https://stackoverflow.com/questions/tagged/promql)
+- [Questions tagged 'promql' on StackOverflow](https://stackoverflow.com/questions/tagged/promql)
 
 ### Tutorials
 

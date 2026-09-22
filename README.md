@@ -78,9 +78,11 @@ http_requests_total{code="503",handler="query_range",method="get"} 131
 
 ### Debian Packages
 
-The Prometheus server is available also as Debian package provided directly by RobustPerception with their own [APT repository](http://deb.robustperception.io/).
+**NOTE**: the RobustPerception APT repository (`deb.robustperception.io`) is deprecated; RobustPerception was acquired by Grafana Labs in 2020.
 
-The following components are also available as packages:
+The official [installation documentation](https://prometheus.io/docs/prometheus/latest/installation/) now recommends pre-compiled binaries or [Docker images](https://hub.docker.com/r/prom/prometheus/). Debian packages may also be found in distribution repositories or community sources such as [prometheus-community](https://github.com/prometheus-community).
+
+The following components can be installed the same way:
 
 * Node Exporter 
 * Pushgateway 

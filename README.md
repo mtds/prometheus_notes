@@ -305,7 +305,7 @@ But there are other exporters for a wide range of protocols and services, such a
 One of the best ways to visualize data saved in Prometheus is to use a dynamic dashboard like *Grafana*.
 
 - [Grafana support for Prometheus](https://prometheus.io/docs/visualization/grafana/)
-- [Using Prometheus with Grafana](http://docs.grafana.org/features/datasources/prometheus/)
+- [Prometheus data source in Grafana](https://grafana.com/docs/grafana/latest/datasources/prometheus/)
 - [Grafana main web site](https://grafana.com)
 
 ## Useful Resources
@@ -314,6 +314,7 @@ One of the best ways to visualize data saved in Prometheus is to use a dynamic d
 - [Prometheus Presentation at CERN (Fabian Reinartz/CoreOS)](https://cds.cern.ch/record/2253468?ln=en)
 - [Five things you should be monitoring: Latency, Errors, Throughput, Utilization, Blackbox monitoring (B.Brazil)](https://www.oreilly.com/ideas/5-things-you-should-be-monitoring)
 - [Sysadmin Chris Siebenmann on Prometheus at University of Toronto](https://utcc.utoronto.ca/~cks/space/blog/__TopicPrometheus)
+- [The Zen of Prometheus](https://prometheus.io/docs/practices/the_zen/)
 
 ### Forums
 
@@ -357,14 +358,21 @@ A short collection of PromQL queries and alert rules for different use cases:
 Walkthrough on how to build a query and narrows it down to aggregate the values of multiple time series:
 - https://www.weave.works/blog/promql-queries-for-the-rest-of-us/
 
-PromQL deep dive (WeaveWorks):
+**NOTE**: Weaveworks ceased operations in 2024; the weave.works blog articles are no longer available (the link now resolves to the company home page).
+
+PromQL deep dive (WeaveWorks, still available on Slideshare):
 - https://www.slideshare.net/weaveworks/promql-deep-dive-the-prometheus-query-language
 
 ### How to query Prometheus
 
-An introduction from scratch on how to build PromQL queries on an Ubuntu test installation (Julius Volz, Prometheus developer):
+An introduction from scratch on how to build PromQL queries on an Ubuntu 14.04 test installation (Julius Volz, Prometheus developer; historical):
 - https://www.digitalocean.com/community/tutorials/how-to-query-prometheus-on-ubuntu-14-04-part-1
 - https://www.digitalocean.com/community/tutorials/how-to-query-prometheus-on-ubuntu-14-04-part-2
+
+Modern equivalents (maintained):
+- [How To Use Alertmanager and Blackbox Exporter to Monitor Your Web Server (DigitalOcean)](https://www.digitalocean.com/community/tutorials/how-to-use-alertmanager-and-blackbox-exporter-to-monitor-your-web-server-on-ubuntu-16-04) — steps compatible with current Ubuntu LTS releases (22.04, 24.04)
+- [Getting started with Prometheus](https://prometheus.io/docs/prometheus/latest/getting_started/) + [Monitoring Linux host metrics with the Node Exporter](https://prometheus.io/docs/guides/node-exporter/) — official step-by-step query walkthrough
+- [How to Install Prometheus Monitoring Stack for DOKS Cluster (DigitalOcean developer center)](https://www.digitalocean.com/community/developer-center/how-to-install-prometheus-monitoring-stack-for-doks-cluster) — recent, Kubernetes-focused
 
 ### Prometheus instrumentation details
 
@@ -379,6 +387,7 @@ Blog posts from Brian Brazil (main developer of Prometheus):
 - [Prometheus Storage (on disk)](https://prometheus.io/docs/operating/storage/)
 - [Prometheus external storage integration](https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage)
 - [Prometheus Security Model](https://prometheus.io/docs/operating/security/)
+- [promtool (validate configuration and rules)](https://prometheus.io/docs/prometheus/latest/command-line/promtool/)
 
 ### Blog posts from Brian Brazil
 

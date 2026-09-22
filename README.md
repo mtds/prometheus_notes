@@ -4,7 +4,7 @@ The following is a summary of the notes and the links to external resources I ha
 
 ## Overview
 
-Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud. [...] It is now a standalone open source project and maintained independently of any company.
+Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud. [...] It is now a standalone open source project and maintained independently of any company. To clarify the project's governance, Prometheus joined the [Cloud Native Computing Foundation](https://www.cncf.io/) in 2016 as the second hosted project, after Kubernetes, and graduated in 2018.
 
 ### Features
 

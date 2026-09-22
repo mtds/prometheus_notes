@@ -257,8 +257,8 @@ results in one or more vector elements at a given point in time, the alert count
 
 ## Practical Deployment
 
-- 800K samples/s is record for Prometheus.
-- Plan for 3-4kB of RAM per active time series, and 1.3bytes/sample of disk with varbit encoding.
+- 800K samples/s was the practical record for a single node in 2016; modern single nodes routinely ingest millions of samples/s.
+- 2016-era planning figures: ~3-4kB of RAM per active time series, ~1.3 bytes/sample of disk with varbit encoding.
 - SSD recommended.
 - Ultra-granular monitoring isn't free, tradeoff against time and cost.
 - 60s resolution is a good starting point.
@@ -266,7 +266,9 @@ results in one or more vector elements at a given point in time, the alert count
 - One Prometheus per team/service works well, and lets you scale.
 - Global Prometheus servers can pull in aggregated stats via federation.
 - For HA, run two identical Prometheus servers.
-- Alertmanager currently requires manual handling on failure.
+- Alertmanager has supported high-availability clustering (gossip-based) since v0.15: run several replicas that form a cluster. See the [Alertmanager HA documentation](https://prometheus.io/docs/alerting/latest/high_availability/).
+- [Agent mode](https://prometheus.io/docs/prometheus/latest/prometheus_agent/) (stable since 3.x, `--agent` flag) is a scrape-only mode that just remote-writes: use it to scale collection away from the primary servers.
+- Remote write/read integrations cover long-term storage and centralizing data from many nodes.
 - Prometheus focuses on reliability over perfection.
 - Use cross, meta and 3rd part monitoring to detect monitoring system failure.
 - Prometheus storage is considered ephemeral. Long term storage will handle historical data.

@@ -164,7 +164,7 @@ metric_name, key/values,(...), samples
 
 **NOTES**
 - Labels can have any UTF8 value
-- ``__is`` reserved keyword
+- ``__name__`` is the reserved label holding the metric name; labels starting with ``__`` are reserved for metadata
 
 ### Gauges
 - Snapshot of state
@@ -182,6 +182,12 @@ metric_name, key/values,(...), samples
 - Compound types to make common case easier
 - Can be used to track distributions
 - Summary without quantiles is cheap, use it freely
+
+### Native Histograms
+- New metric type (GA in Prometheus 3.x) complementing classic histograms
+- Exponentially spaced buckets: constant memory regardless of value range
+- Fully aggregable (summable), unlike classic histogram buckets
+- See: [Native Histograms specification](https://prometheus.io/docs/specs/native_histograms/)
 
 Ref: [Prometheus Metric Types](https://prometheus.io/docs/concepts/metric_types/)
 

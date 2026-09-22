@@ -90,7 +90,7 @@ The following components can be installed the same way:
 
 ### Using the expression browser
 
-Let us try looking at some data that Prometheus has collected about itself. To use Prometheus's built-in expression browser, navigate to ``http://localhost:9090/graph`` and choose the "Console" view within the "Graph" tab.
+Let us try looking at some data that Prometheus has collected about itself. To use Prometheus's built-in expression browser, navigate to ``http://localhost:9090/query`` and use the "Graph" tab.
 
 Just check one of the metric exporter by Prometheus itself:
 ~~~
@@ -100,9 +100,9 @@ prometheus_target_interval_length_seconds
 This should return a lot of different time series (along with the latest value recorded for each), all with the metric name prometheus_target_interval_length_seconds, but with different labels. These labels designate 
 different latency percentiles and target group intervals.
 
-Another example based on Prometheus functions: enter the following expression to graph the per-second rate of all storage chunk operations happening in the self-scraped Prometheus.
+Another example based on Prometheus functions: enter the following expression to graph the per-second rate of chunks being created in the self-scraped Prometheus.
 ~~~
-rate(prometheus_local_storage_chunk_ops_total[1m])
+rate(prometheus_tsdb_head_chunks_created_total[1m])
 ~~~
 
 Ref: [Getting started with Prometheus](https://prometheus.io/docs/introduction/getting_started/)
@@ -133,7 +133,7 @@ Reload the configuration:
 curl -X POST http://localhost:9090/-/reload
 ~~~
 
-Note that as of Prometheus 2.0, the ``--web.enable-lifecycle`` command line flag must be passed for HTTP reloading to work.
+Note: the ``--web.enable-lifecycle`` flag that was required as of Prometheus 2.0 has been removed again in 2.1; the lifecycle endpoints (``/-/reload``, ``/-/quit``) are enabled by default since then.
 
 Node Exporter:
 
